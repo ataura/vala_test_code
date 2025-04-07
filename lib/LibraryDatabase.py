@@ -4,12 +4,7 @@ class LibraryDatabase:
         self.books = []
         self.filename = filename
         self.load_from_file(filename)
-        try:
-            with open(filename, "r") as file:
-                books = [json.loads(line) for line in file]
-        except FileNotFoundError:
-            print("No existing database found. Starting with an empty list.")
-
+ 
     def add_book(self):
         book_name = input("Enter book name: ")
         author_name = input("Enter author name: ")
